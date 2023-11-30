@@ -16,6 +16,8 @@ public class GetMethodEx03 extends HttpServlet{
 		//response.setContentType("text/plain");
 		response.setContentType("text/json");
 		
+		// add comment
+		
 		// request parameter
 		String userId = request.getParameter("user_id");
 		String name = request.getParameter("name");
