@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/lesson01/quiz08")
 public class GetMethodQuiz08 extends HttpServlet{
-	
+	// quiz8 주석 추가
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		//한글 깨짐 방지
