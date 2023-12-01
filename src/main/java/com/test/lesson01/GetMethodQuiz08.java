@@ -28,7 +28,7 @@ public class GetMethodQuiz08 extends HttpServlet{
 		        "집에 가는 길에 동네 맛집 가서 안주 사갑니다.",
 		        "자축 저 오늘 생일 이에요."));
 		
-		String word = request.getParameter("search");
+		String keyword = request.getParameter("search");
 		
 		PrintWriter out = response.getWriter();
 		out.print("<html><head><title>검색하기</title></head><body>");
@@ -40,10 +40,16 @@ public class GetMethodQuiz08 extends HttpServlet{
 //		}
 		Iterator<String> iter = list.iterator();
 		while (iter.hasNext()) {
-			if (iter.next().contains(word)) {
-				String keyword = iter.next();
-				keyword.replace(word, word + "<b>");
-				out.print(keyword + "<br>");
+			String line = iter.next();
+			
+//			if (line.contains(keyword)) {
+//				String[] words = line.split(keyword);
+//				out.print(words[0] + "<b>" + keyword +"</b>"+ words[1] + "<br>");
+//			}
+			
+			if (line.contains(keyword)) {
+				line = line.replace(keyword,"<b>" + keyword + "</b>");
+				out.print(line + "<br>");
 			}
 		}
 		out.print("</body></html>");
