@@ -14,22 +14,25 @@
 		<h1>길이 변환</h1>
 		<form method="post" action="/lesson02/quiz04_1.jsp">
 		<div class="d-flex align-items-end">
-			<input class="form-control" type="text" name="rows"><span> cm</span>
+			<input class="form-control col-2" type="text" name="length"><span> cm</span>
 		</div>
 		
-		<label for="i">인치</label>
-		<input type="checkbox" name=in id="i" value="in">
+		<label>인치
+		<input type="checkbox" name=type value="inch">
+		</label>		
+		<label>야드
+		<input type="checkbox" name=type value="yard">
+		</label>		
+		<label>피트
+		<input type="checkbox" name=type value="feet">
+		</label>
+		<label>미터
+		<input type="checkbox" name=type value="meter">
+		</label>
 		
-		<label for="y">야드</label>
-		<input type="checkbox" name=yd id="y" value="yd">
-		
-		<label for="p">피트</label>
-		<input type="checkbox" name=ft id="p" value="ft">
-		
-		<label for="m">미터</label>
-		<input type="checkbox" name=m id="m" value="m">
-		
-		<button type="submit" class="btn btn-info">변환하기</button> 
+		<div>
+		<button type="submit" class="btn btn-info">변환하기</button>
+		</div> 
 		</form>
 	</div>
 </body>
