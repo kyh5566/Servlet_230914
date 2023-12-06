@@ -30,6 +30,7 @@
     
  	String keyword = request.getParameter("keyword");
  	String point = request.getParameter("point");
+ 	boolean exclude = point != null;
 	%>
 	<div class="container">
 		<h1 class="text-center">검색 결과</h1>
@@ -43,18 +44,22 @@
 			</thead>
 			<tbody>
 			<%
-				for (Map<String, Object> item : list) {
+				for (Map<String, Object> item : list) { //
 					if (keyword.equals(item.get("menu"))) {
+						// skip 조건 : check 가 되어있고 스킵 되어야하는 조건이면 continue 로 넘김.
+						if (exclude && (double)item.get("point") <= 4.0) { // Object 이기때문에 연산을 가능캐하기위하여 double 로 다운캐스팅
+							continue; // 아래 코드를 수행하지않고 다시 위로 올라감
+						}
 			%>
 				<tr>
 					<td><%= item.get("menu") %></td>
 					<td><%= item.get("name") %></td>
 					<td><%= item.get("point") %></td>
 				</tr>
-				<%
+			<%
 					}
 				}
-				%>
+			%>
 			</tbody>
 		</table>
 	</div>
