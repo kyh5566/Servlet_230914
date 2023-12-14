@@ -14,7 +14,7 @@ import com.test.common.MysqlService;
 public class insertQuiz01 extends HttpServlet{
 
 	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String name = request.getParameter("name");
 		String url = request.getParameter("url");
 		
@@ -25,7 +25,7 @@ public class insertQuiz01 extends HttpServlet{
 		//insert query
 		String insert = "insert into (`name`, `url`)"
 				+ "values"
-				+ "('" + name + "', '" + url + "')" ;
+				+ "('" + name + "', '" + url + "')";
 		try {
 			ms.update(insert);
 		} catch (SQLException e) {
